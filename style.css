@@ -1,0 +1,75 @@
+header {
+  background-image: url("img/olimpic.jpg");
+  background-size: contain;
+  background-position: center;
+  height: 200px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+h1 {
+  background-color: antiquewhite;
+  border-radius: 10px;
+  padding: 10px;
+  opacity: 0.8;
+  margin: 0;
+  font-size: 36px;
+  font-weight: bold;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+nav li {
+  margin-right: 20px;
+}
+nav a {
+  text-decoration: none;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  padding: 10px;
+  color: #000;
+  font-weight: bold;
+}
+
+.imagen {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+img {
+  width: 100%;
+  height: 150px;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+}
+ul {
+  list-style: none outside none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.demo .item {
+  margin-bottom: 60px;
+}
+.content-slider li {
+  background-color: #ed3020;
+  text-align: center;
+  color: #fff;
+}
+.content-slider h3 {
+  margin: 0;
+  padding: 70px 0;
+}
+.demo {
+  width: 100%;
+}

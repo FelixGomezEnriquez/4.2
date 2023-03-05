@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="src/js/lightslider.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="css/lightslider.css" rel="stylesheet" type="text/css">
+    <script src="js/lightslider.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script>
+        $(document).ready(function () {
+
+            $("#content-slider").lightSlider({
+                loop: true,
+                keyPress: true
+            });
+            $('#image-gallery').lightSlider({
+                gallery: true,
+                item: 1,
+                thumbItem: 4,
+                slideMargin: 0,
+                speed: 500,
+                auto: true,
+                loop: true,
+                onSliderLoad: function () {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }
+            });
+
+
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Las Olimpiadas</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Historia</a></li>
+                <li><a href="#">Atletas</a></li>
+                <li><a href="#">Países</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+            <div class="d-flex flex-column flex-shrink-0 p-3 bg-light">
+
+
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                    <span class="fs-4"> Olimpiadas
+                    </span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li>
+                        <a href="#" class="nav-link link-dark" onclick="change('londres')">
+                            <svg class="bi me-2" width="16" height="16">
+                                <use xlink:href="#table"></use>
+                            </svg>
+                            Londres 2012
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link link-dark" onclick="change('pekin')">
+                            <svg class="bi me-2" width="16" height="16">
+                                <use xlink:href="#grid"></use>
+                            </svg>
+                            Pekin 2008 </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link link-dark" onclick="change('atenas')">
+                            <svg class="bi me-2" width="16" height="16">
+                                <use xlink:href="#people-circle"></use>
+                            </svg>
+                            Atenas 2004
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link link-dark" onclick="change('sidney')">
+                            <svg class="bi me-2" width="16" height="16">
+                                <use xlink:href="#people-circle"></use>
+                            </svg>
+                            Sidney 2000
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link link-dark" onclick="change('atlanta')">
+                            <svg class="bi me-2" width="16" height="16">
+                                <use xlink:href="#people-circle"></use>
+                            </svg>
+                            Atlanta 1996
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link link-dark" onclick="change('barcelona')">
+                            <svg class="bi me-2" width="16" height="16">
+                                <use xlink:href="#people-circle"></use>
+                            </svg>
+                            Barcelona 1992 </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link link-dark" onclick="change('seul')">
+                            <svg class="bi me-2" width="16" height="16">
+                                <use xlink:href="#people-circle"></use>
+                            </svg>
+                            Seul 1998
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link link-dark" onclick="change('angeles')">
+                            <svg class="bi me-2" width="16" height="16">
+                                <use xlink:href="#people-circle"></use>
+                            </svg>
+                            Los Angeles 84
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+        </aside>
+        <section>
+            <div class="demo">
+                <div class="item">
+                    <div class="clearfix" id="carrusel" style="max-width:600px;">
+                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+                            <li data-thumb="img/londres/boxeo.jpg">
+                                <img src="img/londres/boxeo.jpg" />
+                            </li>
+                            <li data-thumb="img/londres/karate.jpg">
+
+                                <img src="img/londres/karate.jpg" />
+                            </li>
+                            <li data-thumb="img/londres/gimnasia.jpg">
+
+                                <img src="img/londres/gimnasia.jpg" />
+                            </li>
+                            <li data-thumb="img/londres/carrera.jpg">
+
+                                <img src="img/londres/carrera.jpg" />
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        function change(olimpiada) {
+            $("#carrusel").html("");
+
+            switch (olimpiada) {
+                case "londres":
+                    $("#carrusel").append(` 
+                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden" style="min-width:100px">
+                                <li data-thumb="img/londres/boxeo.jpg">
+                                    <img src="img/londres/boxeo.jpg" />
+                                </li>
+                                <li data-thumb="img/londres/karate.jpg">
+
+                                    <img src="img/londres/karate.jpg" />
+                                </li>
+                                <li data-thumb="img/londres/gimnasia.jpg">
+
+                                    <img src="img/londres/gimnasia.jpg" />
+                                </li>
+                                <li data-thumb="img/londres/carrera.jpg">
+
+                                    <img src="img/londres/carrera.jpg" />
+                                </li>
+
+                            </ul>
+                        `);
+                    $("#content-slider").lightSlider({
+                        loop: true,
+                        keyPress: true
+                    });
+                    $('#image-gallery').lightSlider({
+                        gallery: true,
+                        item: 1,
+                        thumbItem: 4,
+                        slideMargin: 15,
+                        speed: 500,
+                        auto: true,
+                        loop: true,
+                        onSliderLoad: function () {
+                            $('#image-gallery').removeClass('cS-hidden');
+                        }
+                    });
+                    break;
+
+                case "pekin":
+                    $("#carrusel").append(` 
+                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden" style="min-width:200px">
+                                <li data-thumb="img/pekin/carrera.jpg">
+                                    <img src="img/pekin/carrera.jpg" />
+                                </li>
+                                
+                                <li data-thumb="img/pekin/basket.jpg">
+
+                                    <img src="img/pekin/basket.jpg" />
+                                </li>
+                                <li data-thumb="img/pekin/softball.jpg">
+
+                                    <img src="img/pekin/softball.jpg" />
+                                </li>
+                                <li data-thumb="img/pekin/water.jpg">
+                                <img src="img/pekin/water.jpg" />
+                                </li>
+
+                            </ul>
+                        `);
+                    $("#content-slider").lightSlider({
+                        loop: true,
+                        keyPress: true
+                    });
+                    $('#image-gallery').lightSlider({
+                        gallery: true,
+                        item: 1,
+                        thumbItem: 4,
+                        slideMargin: 15,
+                        speed: 500,
+                        auto: true,
+                        loop: true,
+                        onSliderLoad: function () {
+                            $('#image-gallery').removeClass('cS-hidden');
+                        }
+                    });
+                    break;
+
+                case "atenas":
+                    $("#carrusel").append(` 
+                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden" style="min-width:200px">
+                                <li data-thumb="img/atenas/balon.jpg">
+                                    <img src="img/atenas/balon.jpg" />
+                                </li>
+                                
+                                <li data-thumb="img/atenas/bici.jpg">
+
+                                    <img src="img/atenas/bici.jpg" />
+                                </li>
+                                <li data-thumb="img/atenas/futbol.jpg">
+
+                                    <img src="img/atenas/futbol.jpg" />
+                                </li>
+                                <li data-thumb="img/atenas/volley.jpg">
+
+                                <img src="img/atenas/volley.jpg" />
+                                </li>
+
+                            </ul>
+                        `);
+                    $("#content-slider").lightSlider({
+                        loop: true,
+                        keyPress: true
+                    });
+                    $('#image-gallery').lightSlider({
+                        gallery: true,
+                        item: 1,
+                        thumbItem: 4,
+                        slideMargin: 15,
+                        speed: 500,
+                        auto: true,
+                        loop: true,
+                        onSliderLoad: function () {
+                            $('#image-gallery').removeClass('cS-hidden');
+                        }
+                    });
+                    break;
+                case "sidney":
+                    $("#carrusel").append(` 
+                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden" style="min-width:200px">
+                                <li data-thumb="img/sidney/carrera.jpg">
+                                    <img src="img/sidney/carrera.jpg" />
+                                </li>
+                                
+                                <li data-thumb="img/sidney/chino.jpg">
+
+                                    <img src="img/sidney/chino.jpg" />
+                                </li>
+                                <li data-thumb="img/sidney/gimnasia.jpg">
+
+                                    <img src="img/sidney/gimnasia.jpg" />
+                                </li>
+                                <li data-thumb="img/sidney/natacion.jpg">
+
+                                <img src="img/sidney/natacion.jpg" />
+                                </li>
+
+                            </ul>
+                        `);
+                    $("#content-slider").lightSlider({
+                        loop: true,
+                        keyPress: true
+                    });
+                    $('#image-gallery').lightSlider({
+                        gallery: true,
+                        item: 1,
+                        thumbItem: 4,
+                        slideMargin: 15,
+                        speed: 500,
+                        auto: true,
+                        loop: true,
+                        onSliderLoad: function () {
+                            $('#image-gallery').removeClass('cS-hidden');
+                        }
+                    });
+                    break;
+                case "atlanta":
+                    $("#carrusel").append(` 
+                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden" style="min-width:200px">
+                                <li data-thumb="img/atlanta/canoa.jpg">
+                                    <img src="img/atlanta/canoa.jpg" />
+                                </li>
+                                
+                                <li data-thumb="img/atlanta/gimnasia.jpg">
+
+                                    <img src="img/atlanta/gimnasia.jpg" />
+                                </li>
+                                <li data-thumb="img/atlanta/salto.jpg">
+
+                                    <img src="img/atlanta/salto.jpg" />
+                                </li>
+                                <li data-thumb="img/atlanta/volley.jpg">
+
+                                <img src="img/atlanta/volley.jpg" />
+                                </li>
+
+                            </ul>
+                        `);
+                    $("#content-slider").lightSlider({
+                        loop: true,
+                        keyPress: true
+                    });
+                    $('#image-gallery').lightSlider({
+                        gallery: true,
+                        item: 1,
+                        thumbItem: 4,
+                        slideMargin: 15,
+                        speed: 500,
+                        auto: true,
+                        loop: true,
+                        onSliderLoad: function () {
+                            $('#image-gallery').removeClass('cS-hidden');
+                        }
+                    });
+                    break;
+                case "barcelona":
+                    $("#carrusel").append(` 
+                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden" style="min-width:200px">
+                                <li data-thumb="img/barcelona/basket.jpg">
+                                    <img src="img/barcelona/basket.jpg" />
+                                </li>
+                                
+                                <li data-thumb="img/barcelona/carrera.jpg">
+
+                                    <img src="img/barcelona/carrera.jpg" />
+                                </li>
+                                <li data-thumb="img/barcelona/salto.jpg">
+
+                                    <img src="img/barcelona/salto.jpg" />
+                                </li>
+                                <li data-thumb="img/barcelona/salto2.jpg">
+
+                                <img src="img/barcelona/salto2.jpg" />
+                                </li>
+
+                            </ul>
+                        `);
+                    $("#content-slider").lightSlider({
+                        loop: true,
+                        keyPress: true
+                    });
+                    $('#image-gallery').lightSlider({
+                        gallery: true,
+                        item: 1,
+                        thumbItem: 4,
+                        slideMargin: 15,
+                        speed: 500,
+                        auto: true,
+                        loop: true,
+                        onSliderLoad: function () {
+                            $('#image-gallery').removeClass('cS-hidden');
+                        }
+                    });
+                    break;
+                case "seul":
+                    $("#carrusel").append(` 
+                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden" style="min-width:200px">
+                                <li data-thumb="img/seul/carrera.jpg">
+                                    <img src="img/seul/carrera.jpg" />
+                                </li>
+                                
+                                <li data-thumb="img/seul/gimnasia.jpg">
+
+                                    <img src="img/seul/gimnasia.jpg" />
+                                </li>
+                                <li data-thumb="img/seul/pesas.jpg">
+
+                                    <img src="img/seul/pesas.jpg" />
+                                </li>
+                                <li data-thumb="img/seul/tenis.jpg">
+
+                                <img src="img/seul/tenis.jpg" />
+                                </li>
+
+                            </ul>
+                        `);
+                    $("#content-slider").lightSlider({
+                        loop: true,
+                        keyPress: true
+                    });
+                    $('#image-gallery').lightSlider({
+                        gallery: true,
+                        item: 1,
+                        thumbItem: 4,
+                        slideMargin: 15,
+                        speed: 500,
+                        auto: true,
+                        loop: true,
+                        onSliderLoad: function () {
+                            $('#image-gallery').removeClass('cS-hidden');
+                        }
+                    });
+                    break;
+                case "angeles":
+                    $("#carrusel").append(` 
+                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden" style="min-width:200px">
+                                <li data-thumb="img/angeles/carrera.jpg">
+                                    <img src="img/angeles/carrera.jpg" />
+                                </li>
+                                
+                                <li data-thumb="img/angeles/jabalina.jpg">
+
+                                    <img src="img/angeles/jabalina.jpg" />
+                                </li>
+                                <li data-thumb="img/angeles/salto.jpg">
+
+                                    <img src="img/angeles/salto.jpg" />
+                                </li>
+                                <li data-thumb="img/angeles/vela.jpg">
+
+                                <img src="img/angeles/vela.jpg" />
+                                </li>
+
+                            </ul>
+                        `);
+                    $("#content-slider").lightSlider({
+                        loop: true,
+                        keyPress: true
+                    });
+                    $('#image-gallery').lightSlider({
+                        gallery: true,
+                        item: 1,
+                        thumbItem: 4,
+                        slideMargin: 15,
+                        speed: 500,
+                        auto: true,
+                        loop: true,
+                        onSliderLoad: function () {
+                            $('#image-gallery').removeClass('cS-hidden');
+                        }
+                    });
+                    break;
+
+            }
+        }
+    </script>
+</body>
+
+</html>
